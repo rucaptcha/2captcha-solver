@@ -5,15 +5,21 @@
     "version": "3.0.6",
     "description": "__MSG_extDescription__",
     "homepage_url": "https://2captcha.com/",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "background": {
-        "service_worker": "service_worker.js"
+        "persistent": true,
+        "scripts": [
+            "common/config.js",
+            "common/api.js",
+            "background/background.js",
+            "content/captcha/normal/background.js"
+        ]
     },
     "permissions": [
         "storage",
         "contextMenus"
     ],
-    "action": {
+    "browser_action": {
         "default_popup": "popup/popup.html",
         "default_title": "2Captcha Solver",
         "default_icon": {
@@ -54,18 +60,8 @@
             ]
         }
     ],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self'; object-src 'self'"
-    },
+    "content_security_policy": "script-src 'self'; object-src 'self'",
     "web_accessible_resources": [
-        {
-            "resources": [
-                "assets/images/*",
-                "content/*"
-            ],
-            "matches": [
-                "<all_urls>"
-            ]
-        }
+        "assets/images/*"
     ]
 }

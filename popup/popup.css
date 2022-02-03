@@ -49,6 +49,7 @@ body {
 }
 .container {
     width: 300px;
+    margin-right: 18px; /* Firefox displays vertical scrollbar on top of popup, and this causes horizontal scroll */
 }
 header {
     width: 100%;

@@ -17,18 +17,15 @@ function imageContextMenuAttachSourceHandler(info, tab) {
 
 chrome.contextMenus.removeAll(function() {
 
-    // chrome.i18n.getMessage("...") is not working with manifest v3 (probably bug), lets wait for the fix
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=1159438
-
     chrome.contextMenus.create({
         id: "markAsCaptchaSource",
-        title: "Mark As Captcha Source", // chrome.i18n.getMessage("markAsCaptchaSource"),
+        title: chrome.i18n.getMessage("markAsCaptchaSource"),
         contexts: ["image"],
     });
 
     chrome.contextMenus.create({
         id: "putCaptchaAnswerHere",
-        title: "Put Captcha Answer Here", // chrome.i18n.getMessage("putCaptchaAnswerHere"),
+        title: chrome.i18n.getMessage("putCaptchaAnswerHere"),
         contexts: ["editable"],
     });
 
