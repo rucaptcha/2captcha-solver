@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/popup/popup.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="content">
+
+			<div class="main-loader">
+				<img src="/assets/images/loader_dark.gif">
+			</div>
+
+			<form id="login-form" style="display: none;">
+				<div class="text-center">
+					<a href="#" target="_blank" data-lang-link="/">
+						<img src="/assets/images/logo.svg" height="20">
+					</a>
+				</div>
+				<br><br>
+				<label data-lang="apiKey"></label><br>
+				<input type="text" name="apiKey">
+				<button data-lang="login" class="default-btn"></button>
+				<div class="result"></div>
+				<br>
+				<div class="hint">
+					<span data-lang="doNotHaveApiKey"></span><br>
+					<span data-lang="createAccountToGetIt" data-lang-string="/auth/register"></span>
+				</div>
+			</form>
+
+			<div id="account-info" style="display: none;">
+
+				<div class="panel">
+					<div class="row align-items-center">
+						<div class="col-auto">
+							<a href="#" target="_blank" data-lang-link="/">
+								<img src="/assets/images/logo.svg" height="20">
+							</a>
+						</div>
+						<div class="col text-right">
+							<span class="balance"></span>
+							<img src="/assets/images/coins.png">
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-dark mb-5">
+					<div class="row align-items-center">
+						<div class="col">
+							<span class="email"></span>
+						</div>
+						<div class="col-auto">
+							<a href="#" class="logout"><span data-lang="logout"></span><img src="/assets/images/logout.png"></a>
+						</div>
+					</div>
+				</div>
+
+				<form id="settings-form">
+
+					<div class="panel text-center">
+						<div class="switch">
+							<input type="checkbox" name="isPluginEnabled" id="isPluginEnabled">
+							<label for="isPluginEnabled" data-lang="enablePlugin"></label>
+						</div>
+					</div>
+
+					<div class="panel panel-dark mb-10">
+						<table>
+							<tr>
+								<td>
+									<span data-lang="submitFormsAutomatically"></span>
+									<a href="#" target="_blank" class="auto-submit-link">
+										<img src="/assets/images/cog.png" class="cog">
+									</a>
+									<div class="line-separator"></div>
+									<span data-lang="delay"></span>
+									<div class="custom-select">
+										<div class="custom-select-label">
+											<span class="custom-select-value">0</span>
+											<span data-lang="seconds"></span>
+										</div>
+										<div class="custom-select-dropdown">
+											<div class="custom-select-dropdown-inner">
+												<div class="custom-select-dropdown-value" data-value="0">0</div>
+												<div class="custom-select-dropdown-value" data-value="1">1</div>
+												<div class="custom-select-dropdown-value" data-value="3">3</div>
+												<div class="custom-select-dropdown-value" data-value="5">5</div>
+												<div class="custom-select-dropdown-field">
+													<input type="text" name="submitFormsDelay" placeholder="0" data-type="int">
+													<button>></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td>
+									<input type="checkbox" name="autoSubmitForms"><br>&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator my-10"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<span data-lang="ifErrorRepeat"></span>
+									<div class="custom-select">
+										<div class="custom-select-label">
+											<span class="custom-select-value">0</span>
+											<span data-lang="times"></span>
+										</div>
+										<div class="custom-select-dropdown">
+											<div class="custom-select-dropdown-inner">
+												<div class="custom-select-dropdown-value" data-value="0">0</div>
+												<div class="custom-select-dropdown-value" data-value="1">1</div>
+												<div class="custom-select-dropdown-value" data-value="3">3</div>
+												<div class="custom-select-dropdown-value" data-value="5">5</div>
+												<div class="custom-select-dropdown-field">
+													<input type="text" name="repeatOnErrorTimes" placeholder="0" data-type="int">
+													<button>></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="line-separator"></div>
+									<span data-lang="delay"></span>
+									<div class="custom-select">
+										<div class="custom-select-label">
+											<span class="custom-select-value">0</span>
+											<span data-lang="seconds"></span>
+										</div>
+										<div class="custom-select-dropdown">
+											<div class="custom-select-dropdown-inner">
+												<div class="custom-select-dropdown-value" data-value="0">0</div>
+												<div class="custom-select-dropdown-value" data-value="5">5</div>
+												<div class="custom-select-dropdown-value" data-value="10">10</div>
+												<div class="custom-select-dropdown-value" data-value="30">30</div>
+												<div class="custom-select-dropdown-value" data-value="60">60</div>
+												<div class="custom-select-dropdown-field">
+													<input type="text" name="repeatOnErrorDelay" placeholder="0" data-type="int">
+													<button>></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="panel panel-dark mb-10 pb-5">
+						<div class="panel-title" data-lang="enabledSolveAutomatically"></div>
+						<div class="panel-separator"></div>
+						<table>
+							<tr>
+								<td>
+									<span data-lang="images"></span>
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForNormal">
+									<input type="checkbox" name="autoSolveNormal">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									reCaptcha V2
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForRecaptchaV2">
+									<input type="checkbox" name="autoSolveRecaptchaV2">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									reCaptcha V2 Invisible
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForInvisibleRecaptchaV2">
+									<input type="checkbox" name="autoSolveInvisibleRecaptchaV2">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									reCaptcha V3 (<span data-lang="minScore"></span>
+									<div class="custom-select">
+										<div class="custom-select-label">
+											<span class="custom-select-value">0.1</span>
+										</div>
+										<div class="custom-select-dropdown">
+											<div class="custom-select-dropdown-inner">
+												<div class="custom-select-dropdown-value" data-value="0.1">0.1</div>
+												<div class="custom-select-dropdown-value" data-value="0.3">0.3</div>
+												<div class="custom-select-dropdown-value" data-value="0.5">0.5</div>
+												<div class="custom-select-dropdown-value" data-value="0.7">0.7</div>
+												<div class="custom-select-dropdown-value" data-value="0.9">0.9</div>
+												<div class="custom-select-dropdown-field d-none">
+													<input type="text" name="recaptchaV3MinScore" placeholder="0" data-type="float">
+													<button>></button>
+												</div>
+											</div>
+										</div>
+									</div>)
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForRecaptchaV3">
+									<input type="checkbox" name="autoSolveRecaptchaV3">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									hCaptcha
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForHCaptcha">
+									<input type="checkbox" name="autoSolveHCaptcha">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									GeeTest
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForGeetest">
+									<input type="checkbox" name="autoSolveGeetest">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									KeyCaptcha
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForKeycaptcha">
+									<input type="checkbox" name="autoSolveKeycaptcha">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									ArkoseLabs
+								</td>
+								<td>
+									<input type="checkbox" name="enabledForArkoselabs">
+									<input type="checkbox" name="autoSolveArkoselabs">
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="panel panel-dark mb-5 pb-5">
+						<div class="panel-title" data-lang="proxySettings"></div>
+						<div class="panel-separator"></div>
+						<table>
+							<tr>
+								<td>
+									<span data-lang="useProxy"></span>
+								</td>
+								<td>
+									<input type="checkbox" name="useProxy">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span data-lang="proxyType"></span>
+								</td>
+								<td>
+									<select name="proxytype">
+										<option value="HTTP">HTTP</option>
+										<option value="HTTPS">HTTPS</option>
+										<option value="SOCKS4">SOCKS4</option>
+										<option value="SOCKS5">SOCKS5</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div class="panel-separator"></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="text" name="proxy" placeholder="login:password@123.123.123.123:3128">
+								</td>
+							</tr>
+						</table>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!-- SCRIPTS -->
+	<script src="/vendor/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/common/config.js"></script>
+	<script src="/common/i18n.js"></script>
+	<script src="/popup/popup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+README.md export-ignore
+package.json export-ignore
+build export-ignore
+.DS_Store export-ignore
+.gitattributes export-ignore
