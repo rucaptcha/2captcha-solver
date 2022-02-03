@@ -9,7 +9,8 @@
         "fennec": ">=38.0a1"
     },
     "scripts": {
-        "build": "git archive -o build/2captcha-solver-chrome.zip -9 origin/master --worktree-attributes"
+        "chrome": "git archive -o build\/2captcha-solver-chrome-$(awk -F\\\" '\/\"version\":\/ {print $4}' package.json).zip -9 origin\/main --worktree-attributes",
+        "firefox": "git archive -o build\/2captcha-solver-firefox-$(awk -F\\\" '\/\"version\":\/ {print $4}' package.json).zip -9 origin\/firefox --worktree-attributes"
     },
     "license": "MIT",
     "keywords": [
