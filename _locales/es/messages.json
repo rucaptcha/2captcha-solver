@@ -40,6 +40,12 @@
   "submitFormsAutomatically": {
     "message": "Enviar formularios automáticalmente"
   },
+  "settingsLink": {
+    "message": "Ajustes"
+  },
+  "manualLink": {
+    "message": "Manual"
+  },
   "enabledSolveAutomatically": {
     "message": "Activado / Resolver automáticalmente"
   },

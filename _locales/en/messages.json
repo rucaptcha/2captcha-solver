@@ -40,6 +40,12 @@
   "submitFormsAutomatically": {
     "message": "Submit forms automatically"
   },
+  "settingsLink": {
+    "message": "Settings"
+  },
+  "manualLink": {
+    "message": "Manual"
+  },
   "enabledSolveAutomatically": {
     "message": "Enabled / Solve automatically"
   },

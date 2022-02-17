@@ -40,6 +40,12 @@
   "submitFormsAutomatically": {
     "message": "Отправлять формы автоматически"
   },
+  "settingsLink": {
+    "message": "Настройки"
+  },
+  "manualLink": {
+    "message": "Документация"
+  },
   "enabledSolveAutomatically": {
     "message": "Включено / Решать автоматически"
   },
