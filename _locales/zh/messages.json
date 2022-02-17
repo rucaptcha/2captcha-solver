@@ -40,6 +40,12 @@
   "submitFormsAutomatically": {
     "message": "自动提交表格"
   },
+  "settingsLink": {
+    "message": "設置"
+  },
+  "manualLink": {
+    "message": "手動的"
+  },
   "enabledSolveAutomatically": {
     "message": "启用/自动解决"
   },

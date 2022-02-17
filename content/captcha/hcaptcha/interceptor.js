@@ -19,6 +19,7 @@
             };
 
             hcaptcha.getResponse = () => document.querySelector('[name=h-captcha-response]').value;
+            // if (grecaptcha) grecaptcha.getResponse = () => document.querySelector('[name=h-captcha-response]').value;
         },
     });
 
@@ -45,7 +46,14 @@
             callback: opts.callback,
         };
 
-        registerCaptchaWidget(widgetInfo);
+        let iter = 0;
+        const intId = setInterval(() => {
+            if (++iter > 200) clearInterval(intId);
+            if (window.registerCaptchaWidget) {
+                clearInterval(intId);
+                registerCaptchaWidget(widgetInfo);
+            }
+        }, 500)
     }
 
 })()

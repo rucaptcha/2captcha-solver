@@ -418,7 +418,16 @@ input[name=proxy] {
     height: 12px;
     vertical-align: middle;
 }
-.auto-submit-link {
-    display: inline-block;
-    margin-left: 2px;
+
+.popup-link {
+    color: white;
+}
+
+.popup-link > svg {
+    margin-right: 2px;
+    fill: white;
+    width: 1em;
+    height: 1em;
+    top: .125em;
+    position: relative;
 }
