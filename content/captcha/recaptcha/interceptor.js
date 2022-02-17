@@ -14,6 +14,7 @@
     });
 
     let manageRecaptchaObj = function (obj) {
+        if (window.___grecaptcha_cfg === undefined) return;
         let originalExecuteFunc;
         let originalResetFunc;
 
@@ -65,6 +66,7 @@
     };
 
     let manageEnterpriseObj = function (obj) {
+        if (window.___grecaptcha_cfg === undefined) return;
         let originalEnterpriseObj;
 
         Object.defineProperty(obj, "enterprise", {
