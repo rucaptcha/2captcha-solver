@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "2Captcha Solver"
+    "message": "2Captcha Solver: Auto Evitar"
   },
   "extDescription": {
     "message": "La extensión para resolver automáticalmente los CAPTCHAs en cualqer página web."
@@ -115,7 +115,7 @@
     "message": "Pon la respuesta de captcha aquí"
   },
   "normalManual": {
-    "message": "La ubicación de la imagen de captcha fue guardado. Ahora, elija dónde poner la respuesta. (<a href=\"https://2captcha.com/chrome-ext-image-manual\" target=\"_blank\">manual</a>)"
+    "message": "La ubicación de la imagen de captcha fue guardado. Ahora, elija dónde poner la respuesta."
   },
   "autoSubmitRules": {
     "message": "Reglas de envío automático"

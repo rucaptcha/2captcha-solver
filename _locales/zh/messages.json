@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": " 2Captcha Solver"
+    "message": "2Captcha Solver: Auto Recognition and Bypass"
   },
   "extDescription": {
     "message": "该插件拓展程序有助于解决网站页面上的验证码。无论处于什么网页，该拓展程序都能帮助您自动识别网页上的验证码"
@@ -115,7 +115,7 @@
     "message": "把验证码答案放在这里"
   },
   "normalManual": {
-    "message": "带有验证码的图像的位置被保存。 现在选择把答案放在哪里. (<a href=\"https://2captcha.com/chrome-ext-image-manual\" target=\"_blank\">手动的</a>)"
+    "message": "带有验证码的图像的位置被保存。 现在选择把答案放在哪里."
   },
   "autoSubmitRules": {
     "message": "自动提交规则"

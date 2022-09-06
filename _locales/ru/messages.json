@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "2Captcha Solver"
+    "message": "2Captcha Solver: Обход и Авто Ввод Капчи"
   },
   "extDescription": {
     "message": "Этот плагин помогает решать капчи на страницах сайтов."
@@ -115,7 +115,7 @@
     "message": "Вставить ответ на капчу сюда"
   },
   "normalManual": {
-    "message": "Расположение изображения с капчей сохранено. Теперь укажите поле, куда вставить ответ. (<a href=\"https://2captcha.com/chrome-ext-image-manual\" target=\"_blank\">Инструкция</a>)"
+    "message": "Расположение изображения с капчей сохранено. Теперь укажите поле, куда вставить ответ."
   },
   "autoSubmitRules": {
     "message": "Правила автоотправки форм"
