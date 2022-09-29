@@ -4,9 +4,10 @@
 - Normal (image with text)
 - reCAPTCHA V2, V3
 - hCaptcha
-- GeeTest
+- GeeTest, GeeTest V4
 - KeyCaptcha
 - ArkoseLabs (FunCaptcha)
+- Lemin
 
 
 ## Supported browsers:

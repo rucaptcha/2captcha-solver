@@ -37,6 +37,12 @@ class TwoCaptcha {
         return this.solve(captcha);
     }
 
+    geetest_v4(captcha) {
+        captcha.method = 'geetest_v4';
+
+        return this.solve(captcha);
+    }
+
     hcaptcha(captcha) {
         captcha.method = 'hcaptcha';
 
@@ -51,6 +57,12 @@ class TwoCaptcha {
 
     arkoselabs(captcha) {
         captcha.method = "funcaptcha";
+
+        return this.solve(captcha);
+    }
+
+    lemin(captcha) {
+        captcha.method = "lemin";
 
         return this.solve(captcha);
     }
@@ -204,6 +216,8 @@ class TwoCaptcha {
             canSkip:       "can_no_answer",
             apiServer:     "api_server",
             softId:        "soft_id",
+            captchaId:     "captcha_id",
+            divId:         "div_id",
             callback:      "pingback",
         };
 

@@ -7,6 +7,7 @@ Config.getAll().then(function(config) {
         ["content/core_helpers.js"],
         ["content/communication_helpers.js"],
         ["content/captcha/geetest/interceptor.js", config.enabledForGeetest],
+        ["content/captcha/geetest_v4/interceptor.js", config.enabledForGeetest_v4],
         ["content/captcha/hcaptcha/interceptor.js", config.enabledForHCaptcha],
         ["content/captcha/hcaptcha/hunter.js"],
         ["content/captcha/keycaptcha/hunter.js"],
@@ -14,6 +15,7 @@ Config.getAll().then(function(config) {
         ["content/captcha/recaptcha/hunter.js"],
         ["content/captcha/arkoselabs/interceptor.js"],
         ["content/captcha/arkoselabs/hunter.js"],
+        ["content/captcha/lemin/interceptor.js", config.enabledForLemin],
     ];
 
     scripts.forEach(s => {

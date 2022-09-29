@@ -2,7 +2,7 @@
     "name": "__MSG_extName__",
     "short_name": "__MSG_extShortName__",
     "default_locale": "en",
-    "version": "3.0.9",
+    "version": "3.1.0",
     "description": "__MSG_extDescription__",
     "homepage_url": "https://2captcha.com/",
     "manifest_version": 3,
@@ -45,12 +45,14 @@
                 "content/core_helpers.js",
                 "content/script.js",
                 "content/captcha/geetest/processor.js",
+                "content/captcha/geetest_v4/processor.js",
                 "content/captcha/hcaptcha/processor.js",
                 "content/captcha/keycaptcha/processor.js",
                 "content/captcha/recaptcha/processor.js",
                 "content/captcha/arkoselabs/processor.js",
                 "content/captcha/normal/hunter.js",
-                "content/captcha/normal/processor.js"
+                "content/captcha/normal/processor.js",
+                "content/captcha/lemin/processor.js"
             ]
         }
     ],

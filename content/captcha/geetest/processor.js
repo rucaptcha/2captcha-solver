@@ -13,6 +13,11 @@ CaptchaProcessors.register({
     attachButton: function(widget, config, button) {
         let helper = this.getHelper(widget);
 
+        // already init?
+        if (helper.find('.captcha-solver').length !== 0) {
+            return;
+        }
+
         button.css({
             width: helper.outerWidth() + "px"
         });

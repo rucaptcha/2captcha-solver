@@ -20,7 +20,8 @@ CaptchaProcessors.register({
 
     getParams: function(widget, config) {
         let params = {
-            pageurl: location.href,
+            // we in iframe?
+            pageurl: window.top === window.self ? location.href : window.parent.location.href,
             publickey: widget.pkey,
         };
 
