@@ -18,10 +18,20 @@ CaptchaProcessors.register({
         if (config.autoSolveArkoselabs) button.click();
     },
 
+    getOriginUrl: function() {
+        const href = document.location.href;
+        const referrer = document.referrer;
+        // we in iframe?
+        if(window.parent != window) {
+            return referrer;
+        } else {
+            return href;
+        }
+    },
+
     getParams: function(widget, config) {
         let params = {
-            // we in iframe?
-            pageurl: window.top === window.self ? location.href : window.parent.location.href,
+            pageurl: this.getOriginUrl(),
             publickey: widget.pkey,
         };
 
