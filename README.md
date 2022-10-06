@@ -8,6 +8,7 @@
 - KeyCaptcha
 - ArkoseLabs (FunCaptcha)
 - Lemin
+- Yandex Smart Captcha
 
 
 ## Supported browsers:

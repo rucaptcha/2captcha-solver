@@ -16,6 +16,7 @@ Config.getAll().then(function(config) {
         ["content/captcha/arkoselabs/interceptor.js"],
         ["content/captcha/arkoselabs/hunter.js"],
         ["content/captcha/lemin/interceptor.js", config.enabledForLemin],
+        ["content/captcha/yandex/interceptor.js", config.enabledForYandex]
     ];
 
     scripts.forEach(s => {

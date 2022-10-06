@@ -22,7 +22,7 @@ CaptchaProcessors.register({
 
         helper.append(button);
 
-        if (config.autoSolveGeetest) button.click();
+        if (config.autoSolveLemin) button.click();
     },
 
     getParams: function(widget, config) {

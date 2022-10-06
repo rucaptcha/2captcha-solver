@@ -67,6 +67,12 @@ class TwoCaptcha {
         return this.solve(captcha);
     }
 
+    yandex(captcha) {
+        captcha.method = "yandex";
+
+        return this.solve(captcha);
+    }
+
     async solve(captcha, waitOptions) {
         let result = {};
 

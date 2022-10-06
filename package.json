@@ -1,7 +1,7 @@
 {
     "title": "__MSG_extName__",
     "name": "__MSG_extShortName__",
-    "version": "3.1.1",
+    "version": "3.2.0",
     "description": "__MSG_extDescription__",
     "author": "2Captcha",
     "engines": {
@@ -22,6 +22,7 @@
         "geetest",
         "geetest_v4",
         "keycaptcha",
-        "lemin"
+        "lemin",
+        "yandex"
     ]
 }
