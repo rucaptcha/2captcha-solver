@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "2Captcha Solver: Auto Evitar"
+    "message": "Captcha Solver: Auto Evitar"
   },
   "extDescription": {
     "message": "La extensión para resolver automáticalmente los CAPTCHAs en cualqer página web."
   },
   "extShortName": {
-    "message": "2Captcha"
+    "message": "Captcha Solver"
   },
   "optionsPageTitle": {
     "message": "Ajustes de 2Captcha Extensión"

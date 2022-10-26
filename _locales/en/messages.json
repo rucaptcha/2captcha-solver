@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "2Captcha Solver: Auto Recognition and Bypass"
+    "message": "Captcha Solver: Auto Recognition and Bypass"
   },
   "extDescription": {
-    "message": "2Captcha plugin allows you to automatically solve CAPTCHAs found on any webpage."
+    "message": "2Captcha Solver plugin allows you to automatically solve CAPTCHAs found on any webpage."
   },
   "extShortName": {
-    "message": "2Captcha"
+    "message": "Captcha solver"
   },
   "optionsPageTitle": {
     "message": "2Captcha Extension Settings"

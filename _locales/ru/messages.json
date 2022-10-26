@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "2Captcha Solver: Обход и Авто Ввод Капчи"
+    "message": "Captcha Solver: Обход и Авто Ввод Капчи"
   },
   "extDescription": {
     "message": "Этот плагин помогает решать капчи на страницах сайтов."
   },
   "extShortName": {
-    "message": "2Captcha"
+    "message": "Captcha Solver"
   },
   "optionsPageTitle": {
     "message": "Настройки расширения 2Captcha"
