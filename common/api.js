@@ -73,6 +73,12 @@ class TwoCaptcha {
         return this.solve(captcha);
     }
 
+    capy(captcha) {
+        captcha.method = "capy";
+
+        return this.solve(captcha);
+    }
+
     async solve(captcha, waitOptions) {
         let result = {};
 
