@@ -1,5 +1,4 @@
 (() => {
-
     let originalFunc;
 
     Object.defineProperty(window, "initGeetest", {
