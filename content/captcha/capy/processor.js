@@ -39,7 +39,6 @@ CaptchaProcessors.register({
 
     onSolved: function(widget, answer) {
         let helper = this.getHelper(widget);
-        debugger;
         helper.find("input[name=capy_captchakey]").val(answer.captchakey);
         helper.find("input[name=capy_challengekey]").val(answer.challengekey);
         helper.find("input[name=capy_answer]").val(answer.answer);
