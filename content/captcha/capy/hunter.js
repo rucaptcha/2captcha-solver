@@ -28,7 +28,7 @@
         if (src) {
             const url = new URL(src);
             const captchakey = src.match('(PUZZLE_.*)')[1];
-            const apiServer = url.host;
+            const apiServer = url.origin;
 
             return [captchakey, apiServer];
         }
