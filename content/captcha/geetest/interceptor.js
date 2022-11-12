@@ -1,5 +1,4 @@
 (() => {
-
     let originalFunc;
 
     Object.defineProperty(window, "initGeetest", {
@@ -8,17 +7,16 @@
         },
         set: function (f) {
             originalFunc = f;
-        },
+        }, configurable: true
     });
 
     let initGeetestHandler = function (params, callback) {
-        setTimeout(function() {
+        setTimeout(function () {
             interceptorFunc(params, callback);
         }, 200);
     };
 
     let interceptorFunc = function (params, callback) {
-
         let getSelectorId = function (selector) {
             let id;
 
@@ -40,44 +38,78 @@
                 id = selector
             }
 
-            if (id[0] == "#") {
+            if (id && id[0] === "#") {
                 id = id.substr(1);
             }
 
             return id;
         };
 
-        let initHelper = function (selector) {
+        let initHelper = function () {
             registerCaptchaWidget({
                 captchaType: "geetest",
                 widgetId: 0,
-                containerId: getSelectorId(selector),
+                containerId: params.appendToSelector,
                 gt: params.gt,
                 challenge: params.challenge,
                 apiServer: params.api_server || null,
             });
         };
 
-
         let captchaObjEvents = {};
 
+        function findSelector(e) {
+            try {
+                return document.querySelector(e)
+            } catch (t) {
+                if (typeof CSS.escape === "function") {
+                    return document.querySelector(CSS.escape(e))
+                }
+            }
+        }
+
+        function appendToSelector(e) {
+            if (e && typeof document.querySelector === "function") {
+                const selector = findSelector(e);
+                if (selector) {
+                    const obj = selector.getElementsByClassName("geetest_holder");
+                    if (obj && obj.length) {
+                        Array.from(obj).forEach((e => e.parentElement.removeChild(e)))
+                    }
+                }
+            }
+        }
 
         let captchaObj = {
-            appendTo: function (selector) {
+            appendTo: function (e) {
                 if (params.product !== "bind") {
-                    initHelper(selector);
+                    const selectorId = getSelectorId(e);
+                    params.appendToSelector = selectorId;
+                    initHelper();
+                    setTimeout((function () {
+                        if (typeof captchaObjEvents.onReady === "function") {
+                            captchaObjEvents.onReady(e)
+                        }
+                    }), 100)
                 }
                 return this
             },
-            bindForm: function (selector) {
-                initHelper(selector);
+            bindForm: function (e) {
+                const selectorId = getSelectorId(e);
+                params.appendToSelector = selectorId;
+                initHelper();
             },
             onReady: function (e) {
                 captchaObjEvents.onReady = e;
+                if (params.product === "bind") {
+                    if (typeof captchaObjEvents.onReady === "function") {
+                        captchaObjEvents.onReady(e);
+                    }
+                }
                 return this
             },
             onSuccess: function (e) {
-                captchaObjEvents.onSuccess = e;
+                captchaObjEvents.onSuccessCallback = e;
                 return this
             },
             onError: function (e) {
@@ -95,35 +127,23 @@
                     geetest_seccode: null,
                 };
             },
-            validate: function(e) {
-                return this
+            destroy: function () {
+                appendToSelector(params.appendToSelector)
             },
             verify: function () {
-
-            },
-            reset: function () {
-
-            },
-            destroy: function() {
-
-            },
-            hide: function() {
-
-            },
-            show: function() {
-
-            },
-            setInfos: function(e) {
-
-            },
+                const selectorId = getSelectorId(document.querySelector('#captchaBox') || document.forms[0]);
+                params.appendToSelector = selectorId;
+                initHelper();
+            }
         };
 
         let captchaObjProxy = new Proxy(captchaObj, {
-            get: function(target, prop) {
+            get: function (target, prop) {
                 if (prop in target) {
                     return target[prop];
                 } else {
-                    return function() {};
+                    return function () {
+                    };
                 }
             },
         });

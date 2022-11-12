@@ -2,7 +2,7 @@
     "name": "__MSG_extName__",
     "short_name": "__MSG_extShortName__",
     "default_locale": "en",
-    "version": "3.2.1",
+    "version": "3.2.2",
     "description": "__MSG_extDescription__",
     "homepage_url": "https://2captcha.com/",
     "manifest_version": 3,
