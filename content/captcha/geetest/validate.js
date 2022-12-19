@@ -1,4 +1,4 @@
-captchaObj.getValidate = function() {
+captchaObj.getValidate = function () {
     return {
         geetest_challenge: document.querySelector("input[name=geetest_challenge]").value,
         geetest_validate: document.querySelector("input[name=geetest_validate]").value,
@@ -6,6 +6,6 @@ captchaObj.getValidate = function() {
     };
 }
 
-if (window.captchaObjEvents.onSuccess !== undefined) {
-    captchaObjEvents.onSuccess(captchaObj);
+if (window.captchaObjEvents.onSuccessCallback !== undefined) {
+    window.captchaObjEvents.onSuccessCallback(captchaObj);
 }
