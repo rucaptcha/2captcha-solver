@@ -161,5 +161,8 @@
   },
   "delete": {
     "message": "Удалить"
+  },
+  "blackListDomain": {
+    "message": "Черный список доменов"
   }
 }

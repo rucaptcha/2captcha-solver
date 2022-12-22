@@ -14,11 +14,7 @@ Config.getAll().then(config => {
 
         if (!el.length) continue;
 
-        if (el.is("[type=text]")) {
-            el.val(val);
-        }
-
-        if (el.is("select")) {
+        if (el.is("[type=text]") || el.is("select") || el.is("textarea")) {
             el.val(val);
         }
 
@@ -37,7 +33,7 @@ Config.getAll().then(config => {
 /*
  * Save configurations
  */
-$("#config-form").on("keyup change", "input,select", function() {
+$("#config-form").on("keyup change", "input,select,textarea", function() {
     let key = $(this).attr("name");
     let value = $(this).val();
 

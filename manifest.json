@@ -13,6 +13,9 @@
         "storage",
         "contextMenus"
     ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
     "action": {
         "default_popup": "popup/popup.html",
         "default_title": "Captcha Solver: Auto Recognition and Bypass",
