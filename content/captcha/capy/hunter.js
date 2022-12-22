@@ -27,10 +27,15 @@
         let src = findScript(scripts);
         if (src) {
             const url = new URL(src);
-            const captchakey = src.match('(PUZZLE_.*)')[1];
             const apiServer = url.origin;
-
+            const captchakey = src.match('(PUZZLE_.*)')[1];
             return [captchakey, apiServer];
+        } else {
+            // alternative
+            const inputCaptcha = document.querySelector('[name=capy_captchakey]');
+            if (inputCaptcha) {
+                return [inputCaptcha.value, 'https://www.capy.me'];
+            }
         }
 
         return [ null, null ];
