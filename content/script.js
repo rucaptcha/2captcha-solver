@@ -6,17 +6,17 @@ Config.getAll().then(function(config) {
     let scripts = [
         ["content/core_helpers.js"],
         ["content/communication_helpers.js"],
-        ["content/captcha/geetest/interceptor.js", config.enabledForGeetest],
-        ["content/captcha/geetest_v4/interceptor.js", config.enabledForGeetest_v4],
-        ["content/captcha/hcaptcha/interceptor.js", config.enabledForHCaptcha],
+        ["content/captcha/geetest/interceptor.js", config.isPluginEnabled && config.enabledForGeetest],
+        ["content/captcha/geetest_v4/interceptor.js", config.isPluginEnabled && config.enabledForGeetest_v4],
+        ["content/captcha/hcaptcha/interceptor.js", config.isPluginEnabled && config.enabledForHCaptcha],
         ["content/captcha/hcaptcha/hunter.js"],
         ["content/captcha/keycaptcha/hunter.js"],
-        ["content/captcha/recaptcha/interceptor.js"],
+        ["content/captcha/recaptcha/interceptor.js", config.isPluginEnabled && (config.enabledForRecaptchaV2 || config.enabledForInvisibleRecaptchaV2 || config.enabledForRecaptchaV3)],
         ["content/captcha/recaptcha/hunter.js"],
-        ["content/captcha/arkoselabs/interceptor.js"],
+        ["content/captcha/arkoselabs/interceptor.js", config.isPluginEnabled && config.enabledForArkoselabs],
         ["content/captcha/arkoselabs/hunter.js"],
-        ["content/captcha/lemin/interceptor.js", config.enabledForLemin],
-        ["content/captcha/yandex/interceptor.js", config.enabledForYandex]
+        ["content/captcha/lemin/interceptor.js", config.isPluginEnabled && config.enabledForLemin],
+        ["content/captcha/yandex/interceptor.js", config.isPluginEnabled && config.enabledForYandex]
     ];
 
     scripts.forEach(s => {
