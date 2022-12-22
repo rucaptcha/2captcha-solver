@@ -9,6 +9,7 @@
 - ArkoseLabs (FunCaptcha)
 - Lemin
 - Yandex Smart Captcha
+- Capy Puzzle
 
 
 ## Supported browsers:
