@@ -164,5 +164,14 @@
   },
   "blackListDomain": {
     "message": "Черный список доменов"
+  },
+  "buttonPosition": {
+    "message": "Расположение кнопки"
+  },
+  "buttonPositionInner": {
+    "message": "Рядом с капчей"
+  },
+  "buttonPositionFixed": {
+    "message": "Правый нижний угол"
   }
 }

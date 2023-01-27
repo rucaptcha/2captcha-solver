@@ -164,5 +164,14 @@
   },
   "blackListDomain": {
     "message": "Domain blacklist"
+  },
+  "buttonPosition": {
+    "message": "Button position"
+  },
+  "buttonPositionInner": {
+    "message": "Near the captcha"
+  },
+  "buttonPositionFixed": {
+    "message": "Bottom right corner"
   }
 }

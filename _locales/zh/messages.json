@@ -164,5 +164,14 @@
   },
   "blackListDomain": {
     "message": "域名黑名單"
+  },
+  "buttonPosition": {
+    "message": "按鈕位置"
+  },
+  "buttonPositionInner": {
+    "message": "在验证码附近"
+  },
+  "buttonPositionFixed": {
+    "message": "右下角"
   }
 }

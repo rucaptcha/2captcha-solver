@@ -72,7 +72,7 @@ let CAPTCHA_WIDGETS_LOOP = setInterval(function () {
             let processor = CaptchaProcessors.get(widgetInfo.captchaType);
 
             if (processor.canBeProcessed(widgetInfo, config)) {
-                let button = createSolverButton(widgetInfo.captchaType, widgetInfo.widgetId);
+                let button = createSolverButton(widgetInfo.captchaType, widgetInfo.widgetId, config);
                 processor.attachButton(widgetInfo, config, button);
                 widget[0].dataset.loaded = true;
             }
@@ -203,9 +203,9 @@ function attachProxyParams(params, config) {
 /*
  * Solver button
  */
-function createSolverButton(captchaType, widgetId) {
+function createSolverButton(captchaType, widgetId, config) {
     let button = $(`
-        <div class="captcha-solver" data-state="ready" data-captcha-type="${captchaType}" data-widget-id="${widgetId}">
+        <div class="captcha-solver captcha-solver_${ config.buttonPosition }" data-state="ready" data-captcha-type="${captchaType}" data-widget-id="${widgetId}">
             <div class="captcha-solver-image">
                 <img src="${chrome.runtime.getURL("assets/images/icon_32.png")}">
             </div>

@@ -17,7 +17,16 @@ CaptchaProcessors.register({
 
         if (binded.textarea) {
             binded.textarea.parent().css({height: "auto"})
-            binded.textarea.after(button);
+            if (widget.version == "v2" || widget.version == "v2_invisible") {
+                binded.textarea.parent().after(button);
+            } else {
+                const formBinded = $('form');
+                if (formBinded.length) {
+                    $('form').after(button);
+                } else {
+                    binded.textarea.after(button);
+                }
+            }
         } else {
             binded.button.after(button);
         }
