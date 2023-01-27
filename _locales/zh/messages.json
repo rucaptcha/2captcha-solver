@@ -163,7 +163,7 @@
     "message": "删除"
   },
   "blackListDomain": {
-    "message": "域名黑名單"
+    "message": "URL黑名单"
   },
   "buttonPosition": {
     "message": "按鈕位置"

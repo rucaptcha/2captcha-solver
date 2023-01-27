@@ -163,7 +163,7 @@
     "message": "Delete"
   },
   "blackListDomain": {
-    "message": "Domain blacklist"
+    "message": "URL blacklist"
   },
   "buttonPosition": {
     "message": "Button position"
