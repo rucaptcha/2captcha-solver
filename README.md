@@ -33,7 +33,7 @@ Extension automatically detects which service to use when you enter your `API KE
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/2captcha-solver/ifibfemgeogfhoebkmokieepdoobkbpo)
 - [Firefox Add-Ons](https://addons.mozilla.org/en-US/firefox/addon/2captcha-solver)
 - [Load an unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked)
-
+- [How to use in Puppeteer](https://2captcha.com/blog/how-to-use-2captcha-solver-extension-in-puppeteer)
 
 # How does it work
 
