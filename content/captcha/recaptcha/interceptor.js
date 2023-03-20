@@ -3,6 +3,7 @@
     let recaptchaInstance;
 
     Object.defineProperty(window, "grecaptcha", {
+        configurable: true,
         get: function () {
             return recaptchaInstance;
         },
@@ -22,6 +23,7 @@
         if (obj.reset) originalResetFunc = obj.reset;
 
         Object.defineProperty(obj, "execute", {
+            configurable: true,
             get: function () {
                 return async function (sitekey, options) {
                     if (!options) {
@@ -36,6 +38,10 @@
                         return await originalExecuteFunc(sitekey, options);
                     }
 
+                    if (isBlacklisted(window.location.href, config)) {
+                        return await originalExecuteFunc(sitekey, options);
+                    }
+
                     let widgetId = addWidgetInfo(sitekey, options);
 
                     return await waitForResult(widgetId);
@@ -47,6 +53,7 @@
         });
 
         Object.defineProperty(obj, "reset", {
+            configurable: true,
             get: function () {
                 return function (widgetId) {
                     if (widgetId === undefined) {
@@ -70,6 +77,7 @@
         let originalEnterpriseObj;
 
         Object.defineProperty(obj, "enterprise", {
+            configurable: true,
             get: function () {
                 return originalEnterpriseObj;
             },
@@ -80,6 +88,7 @@
                 let originalResetFunc;
 
                 Object.defineProperty(ent, "execute", {
+                    configurable: true,
                     get: function () {
                         return async function (sitekey, options) {
                             if (!options) {
@@ -94,6 +103,10 @@
                                 return await originalExecuteFunc(sitekey, options);
                             }
 
+                            if (isBlacklisted(window.location.href, config)) {
+                                return await originalExecuteFunc(sitekey, options);
+                            }
+
                             let widgetId = addWidgetInfo(sitekey, options, "1");
 
                             return await waitForResult(widgetId);
@@ -105,6 +118,7 @@
                 });
 
                 Object.defineProperty(ent, "reset", {
+                    configurable: true,
                     get: function () {
                         return function (widgetId) {
                             if (widgetId === undefined) {
@@ -179,6 +193,13 @@
         }
 
         return false;
+    };
+
+    let isBlacklisted = function (url, config) {
+        let m = config.blackListDomain.split('\n').filter(function (entry) {
+            return url.includes(entry);
+        });
+        return m.length > 0;
     };
 
 })()
