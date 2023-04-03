@@ -1,7 +1,6 @@
 (() => {
 
     setInterval(function () {
-
         let input = document.querySelector("input[name='smart-token']");
         if (!input) return;
 

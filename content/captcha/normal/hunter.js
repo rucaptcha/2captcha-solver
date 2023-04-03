@@ -34,6 +34,7 @@ let getElementByXpath = function(path) {
 let getNormalCaptchaWidgetInfo = function(source, callback) {
     let img = getElementByXpath(source.image);
     let input = getElementByXpath(source.input);
+    let form = input.closest('form');
 
     if (img.getAttribute('image-reader') == 'in-progress') return;
     img.setAttribute('image-reader', 'in-progress');
@@ -41,12 +42,14 @@ let getNormalCaptchaWidgetInfo = function(source, callback) {
     ImageReader.getBase64(img, function(imgBase64) {
         if (!img.id) img.id = "normal-captcha-" + Date.now();
         if (!input.id) input.id = "normal-captcha-answer-" + Date.now();
+        if (form && !form.id) form.id = "normal-captcha-container-" + Date.now();
 
         callback({
             captchaType: "normal",
             widgetId: 0,
             imageId: img.id,
             inputId: input.id,
+            containerId: form ? form.id : undefined,
             base64: imgBase64,
         });
     });
@@ -85,7 +88,16 @@ const ImageReader = {
         chrome.runtime.sendMessage({
             command: "loadTaintedImageInBackgroundFrame",
             img_src: img.src
-        }, function(response) {});
+        }, function(response) {
+            if (response === undefined) {
+                let iframe = document.createElement("iframe");
+                iframe.src = img.src;
+                iframe.width = "1px";
+                iframe.height = "1px";
+                iframe.name = img.src;
+                document.body.appendChild(iframe);
+            }
+        });
 
         let interval = setInterval(function() {
             chrome.storage.local.get('taintedImageBase64', function(storage) {

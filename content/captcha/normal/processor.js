@@ -9,7 +9,7 @@ CaptchaProcessors.register({
     },
 
     attachButton: function(widget, config, button) {
-        $("#" + widget.imageId).after(button);
+        $("#" + widget.inputId).after(button);
         if (config.autoSolveNormal) button.click();
     },
 
