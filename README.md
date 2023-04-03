@@ -10,7 +10,7 @@
 - Lemin
 - Yandex Smart Captcha
 - Capy Puzzle
-
+- Cloudflare Turnstile
 
 ## Supported browsers:
 - Chrome/Chromium 89+

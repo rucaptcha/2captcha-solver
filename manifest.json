@@ -59,7 +59,9 @@
                 "content/captcha/yandex/processor.js",
                 "content/captcha/yandex/hunter.js",
                 "content/captcha/capy/processor.js",
-                "content/captcha/capy/hunter.js"
+                "content/captcha/capy/hunter.js",
+                "content/captcha/turnstile/processor.js",
+                "content/captcha/turnstile/hunter.js"
             ]
         }
     ],

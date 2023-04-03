@@ -16,7 +16,8 @@ Config.getAll().then(function (config) {
         ["content/captcha/arkoselabs/interceptor.js", config.isPluginEnabled && config.enabledForArkoselabs && !isBlocked],
         ["content/captcha/arkoselabs/hunter.js"],
         ["content/captcha/lemin/interceptor.js", config.isPluginEnabled && config.enabledForLemin && !isBlocked],
-        ["content/captcha/yandex/interceptor.js", config.isPluginEnabled && config.enabledForYandex && !isBlocked]
+        ["content/captcha/yandex/interceptor.js", config.isPluginEnabled && config.enabledForYandex && !isBlocked],
+        ["content/captcha/turnstile/hunter.js"],
     ];
 
     scripts.forEach(s => {
