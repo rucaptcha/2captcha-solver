@@ -40,6 +40,10 @@ CaptchaProcessors.register({
         helper.find("input[name=pass_token]").val(answer.pass_token);
         helper.find("input[name=gen_time]").val(answer.gen_time);
         helper.find("input[name=captcha_output]").val(answer.captcha_output);
+
+        let script = document.createElement("script");
+        script.src = chrome.runtime.getURL("content/captcha/geetest_v4/validate.js");
+        document.body.append(script);
     },
 
     getForm: function(widget) {
