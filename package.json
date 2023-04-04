@@ -1,7 +1,7 @@
 {
     "title": "__MSG_extName__",
     "name": "__MSG_extShortName__",
-    "version": "3.3.2",
+    "version": "3.3.3",
     "description": "__MSG_extDescription__",
     "author": "2Captcha",
     "engines": {
@@ -25,7 +25,7 @@
         "lemin",
         "yandex",
         "capy",
-        "amazon_waf"
+        "amazon_waf",
         "cloudflare turnstile"
     ]
 }
