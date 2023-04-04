@@ -11,6 +11,7 @@
 - Yandex Smart Captcha
 - Capy Puzzle
 - Cloudflare Turnstile
+- Amazon WAF Captcha
 
 ## Supported browsers:
 - Chrome/Chromium 89+

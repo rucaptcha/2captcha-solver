@@ -25,6 +25,7 @@
         "lemin",
         "yandex",
         "capy",
+        "amazon_waf"
         "cloudflare turnstile"
     ]
 }
